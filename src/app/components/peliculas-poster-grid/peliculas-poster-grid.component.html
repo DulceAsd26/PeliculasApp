@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-3 mb-5" *ngFor="let pelicula of peliculas ">
 
-        <img src="https://image.tmdb.org/t/p/w500{{pelicula.poster_path}}"
+        <img [src]="pelicula.poster_path | poster"
             class="img-fluid poster">
 
             <div>
