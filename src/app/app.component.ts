@@ -7,13 +7,6 @@ import { PeliculasService } from './services/peliculas.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
-  constructor( private peliculasService: PeliculasService ){
 
-    this.peliculasService.getCartelera()
-    .subscribe( resp =>{
-      console.log(resp);
-    })
-    
-  }
+
 }
