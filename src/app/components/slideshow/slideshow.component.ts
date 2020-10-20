@@ -7,23 +7,33 @@ import Swiper from 'swiper';
   templateUrl: './slideshow.component.html',
   styleUrls: ['./slideshow.component.css']
 })
+
 export class SlideshowComponent implements OnInit, AfterViewInit {
 
   @Input() peliculas: Movies[];
 
+  public mySwiper: Swiper;
+
   constructor() { }
 
   ngAfterViewInit(): void {
-    const mySwiper = new Swiper('.swiper-container', {
+    this.mySwiper = new Swiper('.swiper-container', {
       loop: true,
-    
-
-    })
+    });
   } 
 
     ngOnInit(): void {
+
     console.log(this.peliculas);
 
+  }
+
+  onSlideNext(){
+    this.mySwiper.slideNext();
+  }
+
+  onSlidePrev(){
+    this.mySwiper.slidePrev();
   }
 
 }
